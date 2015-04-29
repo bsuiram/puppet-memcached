@@ -33,8 +33,9 @@ logfile <%= @logfile -%>
 <% if @unix_socket -%>
 # UNIX socket path to listen on
 -s <%= @unix_socket %>
-<% elsif @listen_global %>
-# listening on ipv4 and ipv6
+<% elsif @listen_global -%>
+# no "-l" makes memcached listen on all addresses, local and global, ipv4 and ipv6.
+# -l <%= @listen_ip %>
 <% else -%>
 # IP to listen on
 -l <%= @listen_ip %>
