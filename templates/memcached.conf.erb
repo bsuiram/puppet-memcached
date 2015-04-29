@@ -33,6 +33,8 @@ logfile <%= @logfile -%>
 <% if @unix_socket -%>
 # UNIX socket path to listen on
 -s <%= @unix_socket %>
+<% elsif @listen_global %>
+# listening on ipv4 and ipv6
 <% else -%>
 # IP to listen on
 -l <%= @listen_ip %>
